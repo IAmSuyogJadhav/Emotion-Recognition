@@ -9,7 +9,7 @@ img_size = 25
 
 # ----- Loading the model
 model = load_model(
-    './backend/models/model_{}.h5'.format(accuracy))
+    './models/model_{}.h5'.format(accuracy))
 
 # ----- Loading the image
 path = sys.argv[1]
