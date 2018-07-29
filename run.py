@@ -2,6 +2,7 @@ import cv2
 import sys
 from keras.models import load_model
 import numpy as np
+from time import sleep
 
 # ----- Some parameters
 accuracy = 94.12  # Available: [94.12]
@@ -36,3 +37,4 @@ emotion = {
     }
 
 print(emotion[np.argmax(model.predict(image[np.newaxis, :, :, np.newaxis]))])
+# sys.stdout.flush()
