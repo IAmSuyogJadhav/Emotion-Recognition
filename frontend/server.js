@@ -21,9 +21,10 @@ app.post('/image',function(req,res){
     let buf = new Buffer(data, 'base64');
     fs.writeFile('image.png', buf);
     let buf1;
-    var test=spawn('python',['run.py','image.png']);
+    var test=spawn('python',['../backend/run.py','image.png']);
     test.stdout.on('data', function(data) {
         buf1=data.toString();
+        console.log(buf1);
         res.send(buf1);
     } );
     

@@ -19,7 +19,7 @@
             </ul> -->
             
         </div>
-        <img src="Capture.PNG" style="height:1px;" onload="startWebcam();">
+        <img src="placeholder.png" style="height:1px;" onload="startWebcam();">
         <div class="vid" >
         
             <div class="buttons">
@@ -41,7 +41,7 @@
     //                          navigator.webkitGetUserMedia ||
     //                          navigator.mozGetUserMedia ||
     //                          navigator.msGetUserMedia);
-
+      let count=0;
       var video;
       var webcamStream;
 
@@ -96,12 +96,14 @@
       function snapshot() {
          // Draws current image from the video element into the canvas
          console.log("snapshot ran");
-        var heading = document.createElement("h2");
-        var node = document.createTextNode("Input Images");
-        heading.appendChild(node);
-
-        var element = document.getElementById("div1");
-        element.appendChild(heading);
+         if(count==0){
+            var heading = document.createElement("h2");
+            var node = document.createTextNode("Input Images");
+            heading.appendChild(node);
+            count++;
+            var element = document.getElementById("div1");
+            element.appendChild(heading);
+         }
         new1();
         
         
