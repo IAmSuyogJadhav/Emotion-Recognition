@@ -19,7 +19,7 @@
             </ul> -->
             
         </div>
-        <img src="Capture.png" style="height:0;" onload="startWebcam();">
+        <img src="placeholder.png" style="height:1px;" onload="startWebcam();">
         <div class="vid" >
         
             <div class="buttons">
@@ -29,7 +29,7 @@
                 <video onclick="snapshot(this);" width=400 height=400 id="video" controls autoplay></video>
                     
         </div>
-        <canvas  id="myCanvas" width="80%" height="90%"></canvas>  
+        <canvas  id="myCanvas" width="100px" height="100px"></canvas>  
         
     </div>
     </div>
@@ -37,40 +37,44 @@
 <script>
     
     
-    navigator.getUserMedia = ( navigator.getUserMedia ||
-                             navigator.webkitGetUserMedia ||
-                             navigator.mozGetUserMedia ||
-                             navigator.msGetUserMedia);
-
+    // navigator.getUserMedia = ( navigator.getUserMedia ||
+    //                          navigator.webkitGetUserMedia ||
+    //                          navigator.mozGetUserMedia ||
+    //                          navigator.msGetUserMedia);
+      let count=0;
       var video;
       var webcamStream;
 
       function startWebcam() {
-        if (navigator.getUserMedia) {
-           navigator.getUserMedia (
-
+        video = document.querySelector('video');
+                  console.log(video);
+        // if (navigator.mediaDevices.getUserMedia) {
+           navigator.mediaDevices.getUserMedia (
+            {
               // constraints
-              {
+              
                  video: true,
                  audio: false
-              },
-
+            }
+              )
+              .then(
               // successCallback
               function(localMediaStream) {
-                  video = document.querySelector('video');
-                 video.src = window.URL.createObjectURL(localMediaStream);
+                  
+                 video.srcObject= localMediaStream;
                  webcamStream = localMediaStream;
+                 video.play();
                  console.log("startWeb ran");
-              },
-
+              })
+              .catch(
               // errorCallback
               function(err) {
                  console.log("The following error occured: " + err);
               }
            );
-        } else {
-           console.log("getUserMedia not supported");
-        }  
+        // } else {
+        //    console.log("getUserMedia not supported");
+        // }  
       }
 
       function stopWebcam() {
@@ -92,19 +96,43 @@
       function snapshot() {
          // Draws current image from the video element into the canvas
          console.log("snapshot ran");
-        var heading = document.createElement("h2");
-        var node = document.createTextNode("Input Images");
-        heading.appendChild(node);
-
-        var element = document.getElementById("div1");
-        element.appendChild(heading);
-
-        setInterval(function(){ctx.drawImage(video, 0,0, canvas.width, canvas.height);
-           // var image=canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-        //console.log("Save fired");
-        },2000);
+         if(count==0){
+            var heading = document.createElement("h2");
+            var node = document.createTextNode("Input Images");
+            heading.appendChild(node);
+            count++;
+            var element = document.getElementById("div1");
+            element.appendChild(heading);
+         }
+        new1();
+        
         
       }
+      function new1(){ctx.drawImage(video, 0,0, canvas.width, canvas.height);
+            saveImage(canvas);
+           // var image=canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+        //console.log("Save fired");
+        }
+      function saveImage(img){
+          let url=img.toDataURL();
+        //   console.log(url);
+          fetch('/image',{
+              method: 'POST',
+              headers:{ 
+                  'Accept':'application/json,text/plain',
+                  'Content-type':'application/json',
+              },
+              body:JSON.stringify({url:url}),
+          })
+          .then(response=>response.text())
+          .then(function(new1){console.log(new1)});
+        //   getResult();
+      }
+    //   function getResult(){
+    //       fetch('/image')
+    //       .then((res)=> res.text())
+    //       .then((data)=>console.log(data));
+    //   }
 
 </script>
 </html>

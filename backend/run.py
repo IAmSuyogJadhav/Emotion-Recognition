@@ -1,15 +1,21 @@
+from __future__ import print_function
 import cv2
-import sys
+import os, sys
 from keras.models import load_model
 import numpy as np
+
+# Compatible with both Python2 and Python 3
+
+# ----- Getting the path to our script's directory
+# To make it run from anywhere, plus even without the frontend
+directory = os.path.dirname(os.path.realpath(sys.argv[0]))
 
 # ----- Some parameters
 accuracy = 94.12  # Available: [94.12]
 img_size = 25
 
 # ----- Loading the model
-model = load_model(
-    './models/model_{}.h5'.format(accuracy))
+model = load_model('{}/models/model_{}.h5'.format(directory, accuracy))
 
 # ----- Loading the image and converting to grayscale
 path = sys.argv[1]
@@ -21,7 +27,7 @@ if image is None:
 image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # ----- Detecting and Cropping the face
-cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+cascade = cv2.CascadeClassifier(directory + '/cascade.xml')
 detected = cascade.detectMultiScale(image)
 faces = []
 for (x, y, w, h) in detected:
