@@ -13,6 +13,15 @@ h1{
     font-family:Roboto;
     color:white;
 }
+#result{
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    justify-content: center;
+}
+#result h1{
+    color:red;
+}
 .titlebar {
     /* position: absolute;
     left:0;
