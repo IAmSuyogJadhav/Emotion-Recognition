@@ -2,18 +2,15 @@
 
 **Requirements**
 1. NodeJs. If you don't have Nodejs installed, install it from [here](https://nodejs.org/)
-2. 
+2. Python (Both the Python 2 as well as Python3 are supported)
 
-## To start 
+## To start
 1. Change the working directory to `frontend`
 2. Run the command `node server.js`
 3. Open your browser and browse to `localhost:3000`
-4. Click on **Try out** button
+4. Click on `Try out` button
 5. The result will be shown on the screen.
 6. Click again on the same button to get another prediction.
- 
-
-
 
 ## Ultimate goal
 The project aims to create a webapp that will recognise a person's emotions live in the browser. It can also be further developed to include some nice applications.
@@ -33,4 +30,3 @@ The webapp is yet to be implemented. Will be implemented soon.
 ## Contributors
 * Backend: [Suyog](https://github.com/IAmSuyogJadhav/)
 * Frontend: [Ujjawal](https://github.com/ujjawaljaiswal2017)
-
