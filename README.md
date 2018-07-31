@@ -1,15 +1,15 @@
 # Emotion-Recognition
 
 **Requirements**
-1. NodeJs. If you don't have Nodejs installed, install it [here](https://nodejs.org/dist/v8.11.3/node-v8.11.3-linux-x86.tar.xz)
+1. NodeJs. If you don't have Nodejs installed, install it from [here](https://nodejs.org/)
 2. 
 
 ## To start 
 1. Change the working directory to `frontend`
 2. Run the command `node server.js`
 3. Open your browser and browse to `localhost:3000`
-4. Click on **Let's get started** button
-5. The result will be shown in the terminal.
+4. Click on **Try out** button
+5. The result will be shown on the screen.
 6. Click again on the same button to get another prediction.
  
 
