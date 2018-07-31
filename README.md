@@ -2,7 +2,7 @@
 
 **Requirements**
 1. NodeJs. If you don't have Nodejs installed, install it from [here](https://nodejs.org/)
-2. Python (Both the Python 2 as well as Python3 are supported)
+2. Python (Both the Python 2 as well as Python 3 are supported)
 
 ## To start
 1. Change the working directory to `frontend`
@@ -15,7 +15,7 @@
 ## Ultimate goal
 The project aims to create a webapp that will recognise a person's emotions live in the browser. It can also be further developed to include some nice applications.
 ## Current status
-Right now, the focus is on the backend. The model has been trained with keras, using TensorFlow backend. The model architecture is shown below. Addition of CNN was the main step in improving the accuracy of the model.
+As of now, the model has been trained from scratch with keras, using TensorFlow backend. The model architecture is shown below.
 ![alt text](https://github.com/IAmSuyogJadhav/Emotion-Recognition/blob/master/network.png)
 
 ## To-Do's
