@@ -1,6 +1,7 @@
 from __future__ import print_function
 import cv2
-import os, sys
+import os
+import sys
 from keras.models import load_model
 import numpy as np
 
