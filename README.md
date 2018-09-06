@@ -5,17 +5,19 @@
 2. Python (Both the Python 2 as well as Python 3 are supported)
 
 ## To start
-1. Change the working directory to `frontend`
-2. Run the command `node server.js`
-3. Open your browser and browse to `localhost:3000`
-4. Click on `Try out` button
-5. The result will be shown on the screen.
-6. Click again on the same button to get another prediction.
+1. Clone this repo. Change to the newly made directory '`Emotion-Recognition`'
+2. Change the working directory to `frontend`
+3. Run the command `node server.js`
+4. Open your browser and browse to `localhost:3000`
+5. Click on `Try out` button
+6. The result will be shown on the screen.
+7. Click again on the same button to get another prediction.
 
 ## Ultimate goal
 The project aims to create a webapp that will recognise a person's emotions live in the browser. It can also be further developed to include some nice applications.
 ## Current status
 As of now, the model has been trained from scratch with keras, using TensorFlow backend. The model architecture is shown below.
+
 ![alt text](https://github.com/IAmSuyogJadhav/Emotion-Recognition/blob/master/network.png)
 
 ## To-Do's
