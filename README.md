@@ -30,3 +30,7 @@ The webapp is yet to be implemented. Will be implemented soon.
 ## Contributors
 * Backend: [Suyog](https://github.com/IAmSuyogJadhav/)
 * Frontend: [Ujjawal](https://github.com/ujjawaljaiswal2017)
+
+## Current Status
+* The Webapp works fine on PCs, however you can't currently run it in the browser itself.
+* The model is slightly biased currently due to the imbalance of images in the dataset. Will retrain on a sampled dataset once I get over with my exams;)
